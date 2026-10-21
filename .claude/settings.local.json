@@ -49,7 +49,19 @@
       "Bash(gh repo:*)",
       "Bash(git config:*)",
       "Bash(git add:*)",
-      "Bash(git rm:*)"
+      "Bash(git rm:*)",
+      "Bash(git branch:*)",
+      "Bash(git remote:*)",
+      "Bash(git push:*)",
+      "Read(//usr/local/bin/**)",
+      "Read(//opt/homebrew/bin/**)",
+      "Read(//Users/prathameshkasbe/.config/gh/**)",
+      "Bash(curl -s https://api.github.com/user -H \"Authorization: token $\\(cat ~/.config/gh/hosts.yml)",
+      "Bash(grep -A3 \"github.com\" echo \"---\" grep -r \"IdentityFile\" ~/.ssh/config)",
+      "Bash(ssh -T git@github.com)",
+      "Bash(git fetch:*)",
+      "Bash(git commit -m 'Add Render.com deployment config with SQLite persistent disk:*)",
+      "Bash(git commit -m 'Rename ERP to CEP throughout the project:*)"
     ]
   }
 }

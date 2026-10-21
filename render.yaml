@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: school-erp
+    name: school-cep
     env: php
     region: oregon
     plan: free

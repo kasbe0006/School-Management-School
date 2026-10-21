@@ -14,7 +14,7 @@ class SettingsSeeder extends Seeder
     public function run()
     {
         $settings = [
-            ['type' => 'system_name', 'description' => 'School ERP System'],
+            ['type' => 'system_name', 'description' => 'School CEP System'],
             ['type' => 'system_title', 'description' => 'SCHOOL'],
             ['type' => 'current_session', 'description' => '2026-2027'],
             ['type' => 'phone', 'description' => '+1234567890'],
