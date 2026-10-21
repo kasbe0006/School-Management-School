@@ -1,123 +1,98 @@
-## **Laravel School Management System** 
+# School CEP (Campus Education Platform)
 
-**LAVSMS** is developed for educational institutions like schools and colleges built on Laravel 8
+A complete Laravel 8 School Management System with three role-based portals.
 
-**SCREENSHOTS** 
+## 🌐 Live Demo
 
-**Dashboard**
-<img src="https://i.ibb.co/D4T0z6T/dashboard.png" alt="dashboard" border="0">
+**Hosted on Render:** [https://school-cep.onrender.com](https://school-cep.onrender.com)
 
-**Login**
-<img src="https://i.ibb.co/Rh1Bfwk/login.png" alt="login" border="0">
+## 🔐 Login Credentials
 
-**Student Marksheet**
-<img src="https://i.ibb.co/GCgv5ZR/marksheet.png" alt="marksheet" border="0">
+| Portal | Username | Password |
+|--------|----------|----------|
+| **Admin** | `admin` | `password` |
+| **Teacher** | `mathematics_teacher` | `password` |
+| **Parent** | `parent1` | `password` |
 
-**System Settings**
-<img src="https://i.ibb.co/Kmrhw69/system-settings.png" alt="system-settings" border="0">
+## ✨ Features
 
-**Print Marksheet**
-<div style="clear: both"> </div>
-<img src="https://i.ibb.co/5c1GHCj/capture-20210530-115521-crop.png" alt="print-marksheet">
+### Admin Portal
+- Dashboard with school statistics
+- Student management (25 demo students)
+- Attendance marking with AJAX + monthly reports
+- Student Resources (issue/return workflow)
+- Calendar with Hindu & Gregorian holidays (20 events)
+- Exam Marks management (3 terms: First/Mid/Final)
+- Fee/Payment structures & records
 
-**Print Tabulation Sheet & Marksheet**
-<img src="https://i.ibb.co/QmscPfn/capture-20210530-115802.png" alt="tabulation-sheet" border="0">
+### Teacher Portal
+- Attendance marking for assigned classes
+- Attendance reports with summary stats (Present/Absent/Late %)
+- Marks entry & management
 
-<hr />  
+### Parent Portal
+- My Children view - track student details
 
-There are 7 types of user accounts. They include:
- 
-Administrators (Super Admin & Admin)
-- Librarian
-- Accountant
-- Teacher
-- Student
-- Parent
+## 🛠 Tech Stack
 
-**Requirements** 
+- **Framework:** Laravel 8
+- **Language:** PHP 8+
+- **Database:** SQLite (production-ready with persistent disk)
+- **Frontend:** Bootstrap 4, jQuery, Limitless Admin Theme
+- **Authentication:** Laravel Auth + Spatie Permissions
+- **Deployment:** Render.com (auto-deploy from GitHub)
 
-Check Laravel 8 Requirements https://laravel.com/docs/8.x
+## 🚀 Quick Start (Local)
 
-**Installation**
-- Install dependencies (composer install)
-- Set Database Credentials & App Settings in dotenv file (.env)
-- Migrate Database (php artisan migrate)
-- Database seed (php artisan db:seed)
+```bash
+git clone https://github.com/kasbe0006/School-Management-School.git
+cd School-Management-School
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate --seed
+php artisan serve
+```
 
-**Login Credentials**
-After seeding. Login details as follows:
+## 📦 Deployment (Render.com)
 
-| Account Type  | Username | Email | Password |
-| ------------- | -------- | ----- | -------- |
-| Super Admin | cj | cj@cj.com | cj |
-|  Admin | admin | admin@admin.com | cj |
-|  Teacher | teacher | teacher@teacher.com | cj |
-|  Parent | parent | parent@parent.com | cj |
-|  Accountant | accountant | accountant@accountant.com | cj |
-|  Student | student | student@student.com | cj |
+1. Fork this repo
+2. Go to [Render Dashboard](https://dashboard.render.com)
+3. New → Blueprint → Connect GitHub repo
+4. Auto-detects `render.yaml` - click Apply
 
-#### **FUNCTIONS OF ACCOUNTS** 
+The `render.yaml` includes:
+- Persistent disk for SQLite database
+- Auto-migrations + MasterDemoSeeder on deploy
+- Config/route/view caching
 
-**-- SUPER ADMIN**
-- Only Super Admin can delete any record
-- Create any user account
- 
-**-- Administrators (Super Admin & Admin)**
+## 📁 Project Structure
 
-- Manage students class/sections
-- View marksheet of students
-- Create, Edit and manage all user accounts & profiles
-- Create, Edit and manage Exams & Grades
-- Create, Edit and manage Subjects
-- Manage noticeboard of school
-- Notices are visible in calendar in dashboard
-- Edit system settings
-- Manage Payments & fees
+```
+app/
+├── Http/Controllers/
+│   ├── SupportTeam/     # Admin/Teacher controllers
+│   ├── MyParent/        # Parent portal
+│   └── SuperAdmin/      # Settings
+├── Models/              # Eloquent models
+└── Helpers/             # Qs, Mk, Pay helpers
 
-**-- ACCOUNTANT**
-- Manage Payments & fees
-- Print Payment Receipts
+resources/views/
+├── pages/
+│   ├── support_team/    # Admin/Teacher views
+│   └── my_parent/       # Parent views
+```
 
-**-- LIBRARIAN**
-- Manage Books in the Library
+## 📊 Seeded Demo Data
 
-**-- TEACHER**
-- Manage Own Class/Section
-- Manage Exam Records for own Subjects
-- Manage Timetable if Assigned as Class Teacher
-- Manage own profile
-- Upload Study Materials
+- 30 Users (1 admin, 10 teachers, 15 parents, 25 students, 2 accountants, 1 librarian)
+- 10 Classes × 3 sections each
+- 20 Calendar events (Diwali, Holi, Gandhi Jayanti, Christmas, etc.)
+- 30 days attendance records
+- 3 Exams with marks
+- Fee structures per class
+- 104 Student resources issued
 
-**-- STUDENT**
-- View teacher profile
-- View own class subjects
-- View own marks and class timetable
-- View Payments
-- View library and book status
-- View noticeboard and school events in calendar
-- Manage own profile
+## 📝 License
 
-**-- PARENT**
-- View teacher profile
-- View own child's marksheet (Download/Print PDF)
-- View own child's Timetable
-- View own child's payments
-- View noticeboard and school events in calendar
-- Manage own profile
-
-### **Contributing**
-
-Your Contributions & suggestions are welcomed. Please use Pull Request
-
-### **Security Vulnerabilities**
-
-If you discover a security vulnerability within LAV_SMS, please send an e-mail to CJ Inspired via cjay.pub@gmail.com. All security vulnerabilities will be promptly addressed.
-
-***Please Note*** that some sections of this project are in the work-in-progress stage and would be updated soon. These include:
-
-- The Noticeboard/Calendar in the Dashboard Area
-- Librarian/Acountant user pages
-- Library Resources/Study Materials Upload for Students
-
-### **Contact [CJ INSPIRED]**
-- Phone : +2347068149559
+MIT License - Feel free to use for educational purposes.
